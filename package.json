@@ -1,0 +1,25 @@
+{
+  "name": "sao-letitbe",
+  "version": "0.0.5",
+  "description": "my kickass SAO generator",
+  "repository": {
+    "url": "letitbe1334/sao-letitbe",
+    "type": "git"
+  },
+  "author": "letitbe1334 <letitbe1334@gmail.com> (github.com/letitbe1334)",
+  "license": "MIT",
+  "files": [
+    "saofile.js",
+    "template"
+  ],
+  "scripts": {
+    "test": "ava"
+  },
+  "dependencies": {
+    "superb": "^1.3.0"
+  },
+  "devDependencies": {
+    "ava": "^0.25.0",
+    "sao": "^1.0.0"
+  }
+}
