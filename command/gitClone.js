@@ -5,12 +5,14 @@ const spinner = require('./utils/spinner')
 const logger = require('./utils/logger')
 
 module.exports = async ({
-  cwd = process.cwd()
+  cwd,
+  username
+  // cwd = process.cwd()
 }) => {
   return new Promise((resolve, reject) => {
-    const args = ['clone', 'https://github.com/andamicompany/andamiComponents.git']
+    const args = ['clone', 'https://github.com/andamicompany/andamiComponents.git', username]
 
-    logger.info('Git clone to ', cwd, '   env : ', process.cwd())
+    logger.info('Git clone to ', args, '   env : ', process.cwd())
     spinner.start(`Start Git clone !!`)
     const ps = spawn('git', args, {
       stdio: [0, 'pipe', 'pipe'],
@@ -22,6 +24,7 @@ module.exports = async ({
         process.env
       )
     })
+    // logger.info('ps ', ps)
 
     let stdoutLogs = ''
     let stderrLogs = ''
